@@ -1,6 +1,7 @@
 {
 	"clientId": "GlitchEndUser",
 	"redirectUri": "https://jonknightfr.github.io/EndUserDash/",
+	"redirectUri_TEST": "http://localhost:3000/EndUserDash/",
 	"scope": "openid profile fr:idm:* fr:iga:*",
 	"serverConfig": {
 	    "baseUrl": "https://openam-jonknight.forgeblocks.com/am",

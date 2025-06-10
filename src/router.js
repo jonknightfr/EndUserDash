@@ -27,7 +27,7 @@ const routes = [
 
 const router = createRouter({
 	routes,
-	history: createWebHistory()
+	history: createWebHistory('/EndUserDash/')
 });
 
 export default router;
