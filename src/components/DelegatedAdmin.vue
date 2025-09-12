@@ -210,6 +210,7 @@
       filter() {
         if (this.filterPattern == null || this.filterPattern == "") this.filteredUsers = this.users;
         else this.filteredUsers = this.users.filter(user => JSON.stringify(user).toLowerCase().includes(this.filterPattern.toLowerCase()));
+        console.log("FILTERED USERS: " + JSON.stringify(this.users));
       },
       loadData() {
         IdentityService.getSchema()
