@@ -168,7 +168,7 @@
               <div v-show="user.show">
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
-                  {{ JSON.stringify(user.deviceProfiles) }}
+                  {{ user.deviceProfiles }}
                 </v-card-text>
               </div>
             </v-expand-transition>
