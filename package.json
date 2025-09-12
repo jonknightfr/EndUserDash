@@ -18,7 +18,8 @@
     "moment": "latest",
     "cytoscape": "3.31.0",
     "cytoscape-fcose": "latest",
-    "cytoscape-dagre": "latest"
+    "cytoscape-dagre": "latest",
+    "leaflet": "latest"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
