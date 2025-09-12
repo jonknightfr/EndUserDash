@@ -164,12 +164,13 @@
 
         </template>
 
-            <v-expand-transition @enter="convertDate()">
+            <v-expand-transition>
               <div v-show="user.show">
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
                     <template v-for="dev in user.deviceProfiles">
                       LOC: {{ JSON.stringify(JSON.parse(dev)["location"]) }} <br>
+                      DATE: {{ convertDate(JSON.parse(dev)["lastSelectedDate"]) }}
                     </template>
                 </v-card-text>
               </div>
@@ -210,9 +211,9 @@
       this.loadData();
     },
     methods: {
-      convertDate() {
-        console.log("CONVERT DATE");
-        return("DATE");
+      convertDate(date) {
+        console.log("CONVERT DATE " + date);
+        return("June");
       },
       filter() {
         if (this.filterPattern == null || this.filterPattern == "") this.filteredUsers = this.users;
