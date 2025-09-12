@@ -169,7 +169,7 @@
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
                     <template v-for="dev in user.deviceProfiles">
-                      LOC: {{ JSON.stringify(dev.location) }} <br>
+                      LOC: {{ JSON.stringify(JSON.parse(dev)["location"]) }} <br>
                     </template>
                 </v-card-text>
               </div>
