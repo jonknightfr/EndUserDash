@@ -145,6 +145,19 @@
                     </template>
                 </v-tooltip>           
               
+              <v-btn
+                :icon="user.show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                @click="user.show = !user.show"
+              ></v-btn>
+
+            <v-expand-transition>
+              <div v-show="user.show">
+                <v-divider class="border-opacity-25"></v-divider>             
+                <v-card-text>
+                  Boo!
+                </v-card-text>
+              </div>
+            </v-expand-transition>
 
               <div class="position-static d-inline-block me-2">
                 <span class="v-messages ma-2">{{ statusMessage(user.status).msg }}</span>
