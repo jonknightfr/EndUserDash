@@ -168,11 +168,11 @@
               <div v-show="user.show">
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
-                  Boo!
+                  {{ JSON.stringify(user.deviceProfiles) }}
                 </v-card-text>
               </div>
             </v-expand-transition>
-            
+
       </v-card>          
         </v-col>
       </v-row>  
