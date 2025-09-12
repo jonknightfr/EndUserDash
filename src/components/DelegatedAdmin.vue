@@ -210,7 +210,7 @@
       this.loadData();
     },
     methods: {
-      convertDate() {
+      convertDate(dev) {
         console.log("CONVERT DATE");
         return("DATE");
       },
