@@ -168,7 +168,7 @@
               <div v-show="user.show">
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
-                  {{ user.givenName }}
+                  {{ user.deviceProfiles }}
                 </v-card-text>
               </div>
             </v-expand-transition>
@@ -210,7 +210,6 @@
       filter() {
         if (this.filterPattern == null || this.filterPattern == "") this.filteredUsers = this.users;
         else this.filteredUsers = this.users.filter(user => JSON.stringify(user).toLowerCase().includes(this.filterPattern.toLowerCase()));
-        console.log("FILTERED USERS: " + JSON.stringify(this.users));
       },
       loadData() {
         IdentityService.getSchema()
