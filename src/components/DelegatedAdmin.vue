@@ -168,7 +168,7 @@
               <div v-show="user.show">
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
-                  {{ user.deviceProfiles }}
+                  {{ user.givenName }}
                 </v-card-text>
               </div>
             </v-expand-transition>
