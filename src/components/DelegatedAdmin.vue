@@ -168,7 +168,9 @@
               <div v-show="user.show">
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
-                  {{ user.deviceProfiles }}
+                    <template v-for="dev in user.deviceProfiles">
+                      {{ JSON.stringify(JSON.parse(dev))["location"] }}
+                    </template>
                 </v-card-text>
               </div>
             </v-expand-transition>
