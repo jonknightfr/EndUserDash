@@ -164,12 +164,12 @@
 
         </template>
 
-            <v-expand-transition>
+            <v-expand-transition @enter="convertDate()">
               <div v-show="user.show">
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
                     <template v-for="dev in user.deviceProfiles">
-                      LOC: {{ convertDate(dev) }} {{ JSON.stringify(JSON.parse(dev)["location"]) }} <br>
+                      LOC: {{ JSON.stringify(JSON.parse(dev)["location"]) }} <br>
                     </template>
                 </v-card-text>
               </div>
@@ -210,7 +210,7 @@
       this.loadData();
     },
     methods: {
-      convertDate(dev) {
+      convertDate() {
         console.log("CONVERT DATE");
         return("DATE");
       },
