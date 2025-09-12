@@ -169,7 +169,7 @@
                 <v-divider class="border-opacity-25"></v-divider>             
                 <v-card-text>
                     <template v-for="dev in user.deviceProfiles">
-                      LOC: {{ JSON.stringify(JSON.parse(dev)["location"]) }} <br>
+                      LOC: {{ convertDate(dev) }} {{ JSON.stringify(JSON.parse(dev)["location"]) }} <br>
                     </template>
                 </v-card-text>
               </div>
@@ -184,7 +184,8 @@
 
 
 <script setup>
-    import ObjectDialog from '@/components/ObjectDialog.vue';  
+    import ObjectDialog from '@/components/ObjectDialog.vue'; 
+    import L from "leaflet"; 
 </script>
 
 <script>
@@ -209,6 +210,10 @@
       this.loadData();
     },
     methods: {
+      convertDate() {
+        console.log("CONVERT DATE");
+        return("DATE");
+      },
       filter() {
         if (this.filterPattern == null || this.filterPattern == "") this.filteredUsers = this.users;
         else this.filteredUsers = this.users.filter(user => JSON.stringify(user).toLowerCase().includes(this.filterPattern.toLowerCase()));
