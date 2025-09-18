@@ -8,6 +8,7 @@
     </v-card-title>
     <v-card-subtitle class="mb-6">
       If you have appropriate permissions you will be able to<br>view and manage a subet of users here.
+
     </v-card-subtitle>
     
     <v-container fluid v-if="users">
@@ -146,6 +147,8 @@
                 </v-tooltip>           
               
               <v-btn
+                variant="text"
+                color="secondary"
                 :icon="user.show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
                 @click="user.show = !user.show"
               ></v-btn>
@@ -166,11 +169,13 @@
 
             <v-expand-transition>
               <div v-show="user.show">
-                <v-divider class="border-opacity-25"></v-divider>             
+                <v-divider class="border-opacity-25"></v-divider>
                 <v-card-text>
                     <template v-for="dev in user.deviceProfiles">
-                      LOC: {{ JSON.stringify(JSON.parse(dev)["location"]) }} <br>
-                      DATE: {{ convertDate(JSON.parse(dev)["lastSelectedDate"]) }}
+                      DEVICE: {{ JSON.parse(dev)["alias"] }} <br>
+                      DATE: {{ convertDate(JSON.parse(dev)["lastSelectedDate"]) }} <br>
+                      LOCATION: {{ JSON.parse(dev)["location"] }} <br>
+                      <br>
                     </template>
                 </v-card-text>
               </div>
@@ -186,7 +191,6 @@
 
 <script setup>
     import ObjectDialog from '@/components/ObjectDialog.vue'; 
-    import L from "leaflet"; 
 </script>
 
 <script>
@@ -204,7 +208,7 @@
         filterPattern: "",
         filteredUsers: null,
         showDialog: false,
-        dialogData: null     
+        dialogData: null
       }
     },
     created() {
@@ -212,8 +216,24 @@
     },
     methods: {
       convertDate(date) {
-        console.log("CONVERT DATE " + date);
-        return("June");
+        console.log()
+        var d = new Date(date);
+        return(d);
+      },
+      getPlaceNames() {
+        /*
+        var device = JSON.parse(dev);
+        const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${device.location.latitude}&lon=${device.location.longitude}`;
+        fetch(url, {
+          headers: { "User-Agent": "my-app" } // Nominatim requires this
+        }).then(response => {
+          console.log(response);
+          response.json().then(json => {
+            console.log(json);
+            return json.display_name;
+          })
+        })
+        */
       },
       filter() {
         if (this.filterPattern == null || this.filterPattern == "") this.filteredUsers = this.users;

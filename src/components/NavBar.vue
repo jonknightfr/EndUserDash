@@ -80,6 +80,11 @@
 				</template>
 			</v-list-item>
 		</v-list>
+
+<div id="n8n-chat-popup"></div>
+
+
+
 	</v-navigation-drawer>
 </template>
 
@@ -87,6 +92,8 @@
 <script>
 
 	import IdentityService from '@/services/identityService.js';
+	import '@n8n/chat/style.css';
+	import { createChat } from '@n8n/chat';
 
 	export default {
 		data() {
@@ -110,6 +117,19 @@
 			.then(userObject => {
 				this.userObject = userObject;
 			});
+			  createChat({
+			    target: '#n8n-chat-popup',
+			    mode: 'window',
+			    webhookUrl: 'https://mysyree.app.n8n.cloud/webhook/2bee71c0-4f76-44b7-9850-9b6cffcfdc9b/chat',
+
+			    // Remove canned welcome
+			    showWelcomeScreen: false,
+			    initialMessages: [],
+
+			    // Optional features
+			    loadPreviousSession: true,
+			    enableStreaming: false
+			  });			
 		},
 		methods: {
 			async logoutUser() {
