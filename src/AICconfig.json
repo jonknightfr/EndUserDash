@@ -9,7 +9,7 @@
 	},
 	"realmPath": "alpha",
     "ciba_client_id": "CIBA",
-    "ciba_client_secret": "notsecret",
+    "ciba_client_secret": "secret",
     "ciba_acr": "unity",
     "jwk": {
         "p": "7aIjIeRDFQ-retGSNs2YTBeO2yXH0aBVdjt2vBml6K-27s0cwhae6hpMa_XIJa4hlm1UHgT4Kva3XcXs1dI4DVK25XyG5FSs6JChx5XPd0FRIWfbYYITDUOtzvSwKlhtqMeR5pTrDbRe1BtqnEyyrVCP78lRhm-TdgS3UtfZoQs",
